@@ -10,7 +10,7 @@ namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 /// </summary>
 public class QueryValidator
 {
-    private static readonly string DataWorkbenchApiKey = "DataWorkbenchApiKey";
+    private static readonly string ApiKey = "ApiKey";
     private static readonly string TenantAccessToken = "TenantAccessToken";
 
     private readonly Config _config;
@@ -29,10 +29,10 @@ public class QueryValidator
     {
         var failures = new List<InvalidSettingDto>();
 
-        if (!settings.GetValue(DataWorkbenchApiKey, out var dwApiKey))
-            failures.Add(new InvalidSettingDto(DataWorkbenchApiKey, new[] { "Not found" }));
-        else if (dwApiKey != _config.DataWorkbenchApiKey)
-            failures.Add(new InvalidSettingDto(DataWorkbenchApiKey, new[] { "Wrong key" }));
+        if (!settings.GetValue(ApiKey, out var dwApiKey))
+            failures.Add(new InvalidSettingDto(ApiKey, new[] { "Not found" }));
+        else if (dwApiKey != _config.ApiKey)
+            failures.Add(new InvalidSettingDto(ApiKey, new[] { "Wrong key" }));
 
         if (!settings.GetValue(TenantAccessToken, out var tenantToken))
             failures.Add(new InvalidSettingDto(TenantAccessToken, new[] { "Not found" }));
@@ -40,7 +40,7 @@ public class QueryValidator
         {
             var userId = JwtUtils.ValidateToken(tenantToken, _config.JwtSecret);
             if (userId == null)
-                failures.Add(new InvalidSettingDto(DataWorkbenchApiKey, new[] { "Invalid access token" }));
+                failures.Add(new InvalidSettingDto(ApiKey, new[] { "Invalid access token" }));
         }
 
         return new ConnectionValidationResultDto(!failures.Any(), failures);
