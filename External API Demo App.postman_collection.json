@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"settings\": {\r\n        \"settings\": {\r\n            \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n            \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n            \"sourceTable\": \"Authors\"\r\n        }        \r\n    },\r\n    \"columns\": [\"LastName\"],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
+					"raw": "{\r\n    \"settings\":  {\r\n            \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n            \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n            \"sourceTable\": \"Authors\"\r\n     \r\n    },\r\n    \"columns\": [\"LastName\"],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,7 +71,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"settings\": {\r\n        \"settings\": {\r\n            \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n            \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n            \"sourceTable\": \"Books\"\r\n        }        \r\n    },\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
+					"raw": "{\r\n    \"settings\": {\r\n        \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n        \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n        \"sourceTable\": \"Books\"\r\n    },\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -100,7 +100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"settings\": {\r\n        \"settings\": {\r\n            \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n            \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n            \"sourceTable\": \"Books\"\r\n        }        \r\n    },\r\n    \"columns\": [\"Title\"],\r\n    \"filters\": [\r\n        {\r\n            \"columnName\": \"Title\",\r\n            \"columnType\": \"string\",\r\n            \"filterType\": \"StringContains\",\r\n            \"canHaveMultipleValues\": false,\r\n            \"values\": [\"time\"]\r\n        }\r\n    ],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
+					"raw": "{\r\n    \"settings\": {\r\n        \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n        \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n        \"sourceTable\": \"Books\"\r\n    },\r\n    \"columns\": [\"Title\"],\r\n    \"filters\": [\r\n        {\r\n            \"columnName\": \"Title\",\r\n            \"columnType\": \"string\",\r\n            \"filterType\": \"StringContains\",\r\n            \"canHaveMultipleValues\": false,\r\n            \"values\": [\"time\"]\r\n        }\r\n    ],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -129,7 +129,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"settings\": {\r\n        \"settings\": {\r\n            \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n            \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n            \"sourceTable\": \"Books\"\r\n        }        \r\n    },\r\n    \"columns\": [\"Title\"],\r\n    \"filters\": [\r\n        {\r\n            \"columnName\": \"Title\",\r\n            \"columnType\": \"string\",\r\n            \"filterType\": \"StringContains\",\r\n            \"canHaveMultipleValues\": false,\r\n            \"values\": [\"time\"]\r\n        }\r\n    ],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
+					"raw": "{\r\n    \"settings\": {\r\n        \"apiKey\": \"D7BBF32D-54AE-4A45-A778-3227C5CB032C\",\r\n        \"tenantAccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkQ3QkJGMzJELTU0QUUtNEE0NS1BNzc4LTMyMjdDNUNCMDMyQyIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNzE2MjM5MDIyfQ.B_7pn12GL67qnMmuc5L7qrTVD_LiH3tLje3RmLe0V8s\",\r\n        \"sourceTable\": \"Books\"\r\n    },\r\n    \"columns\": [\"Title\"],\r\n    \"filters\": [\r\n        {\r\n            \"columnName\": \"Title\",\r\n            \"columnType\": \"string\",\r\n            \"filterType\": \"StringContains\",\r\n            \"canHaveMultipleValues\": false,\r\n            \"values\": [\"time\"]\r\n        }\r\n    ],\r\n    \"pageParams\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 10\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
