@@ -1,7 +1,7 @@
-﻿using Veracity.DataWorkbench.Connector.ExternalApiDemo.Domain;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
+﻿using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Domain;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
 /// <summary>
 /// Seeds the DB with test/demo data

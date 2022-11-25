@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
 public class QueryException : Exception
 {

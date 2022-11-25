@@ -1,7 +1,7 @@
 ﻿using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataDiscovery.Response;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
 public interface IRepository
 {
@@ -24,7 +24,8 @@ public interface IRepository
     /// <param name="requiredColumns">Represents filter columns from a 'POST /query' request. Optional.</param>
     /// <param name="filters">Query filters. Optional.</param>
     /// <returns></returns>
-    Task<IReadOnlyList<IReadOnlyList<dynamic>>> GetData(IEnumerable<string>? requiredColumns, IEnumerable<QueryFilterDto>? filters);
+    Task<IReadOnlyList<IReadOnlyList<dynamic>>> GetData(IEnumerable<string>? requiredColumns,
+        IEnumerable<QueryFilterDto>? filters);
 
     /// <summary>
     /// Returns a table summary

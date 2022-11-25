@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
 /// <summary>
 /// This filter is embedded into http pipeline. It handles application exceptions and converts them to responses with correct http status codes

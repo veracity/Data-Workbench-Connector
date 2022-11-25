@@ -2,7 +2,7 @@
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
 /// <summary>
 /// Implements simple authentication

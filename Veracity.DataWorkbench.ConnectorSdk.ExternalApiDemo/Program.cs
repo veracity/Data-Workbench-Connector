@@ -3,9 +3,9 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using SqlKata.Compilers;
 using SqlKata.Execution;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +20,7 @@ dbConnection.Open();
 builder.Services.AddDbContext<DemoContext>(opts => opts.UseSqlite(dbConnection));
 builder.Services.AddScoped(prv =>
 {
-    var connection = prv.GetService<DemoContext>().Database.GetDbConnection();
+    var connection = prv.GetService<DemoContext>()!.Database.GetDbConnection();
     return new QueryFactory(dbConnection, new SqliteCompiler());
 });
 

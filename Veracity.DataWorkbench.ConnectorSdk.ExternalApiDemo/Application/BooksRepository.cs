@@ -1,11 +1,11 @@
 ﻿using SqlKata;
 using SqlKata.Execution;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Domain;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataDiscovery.Response;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Domain;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
 /// <summary>
 /// This class represents a Books table as a data source. It has a few columns: Title, Author (by ref) and PublishedDate. 
@@ -34,7 +34,8 @@ public class BooksRepository : IRepository
         .Where(col => requiredColumns == null || !requiredColumns.Any() || requiredColumns.Contains(col, StringComparer.InvariantCultureIgnoreCase))
         .ToList();
 
-    public async Task<IReadOnlyList<IReadOnlyList<dynamic>>> GetData(IEnumerable<string>? requiredColumns, IEnumerable<QueryFilterDto>? filters)
+    public async Task<IReadOnlyList<IReadOnlyList<dynamic>>> GetData(IEnumerable<string>? requiredColumns,
+        IEnumerable<QueryFilterDto>? filters)
     {
         var columnsToUse = GetColumns(requiredColumns);
 
@@ -54,7 +55,7 @@ public class BooksRepository : IRepository
         query = AttachFilters(query, filters);
 
         var queryRes = await _queryFactory.GetAsync(query);
-        return queryRes.Select(row => (row as IDictionary<string, dynamic>).Values.ToList()).ToList();
+        return queryRes.Select(row => ((row as IDictionary<string, dynamic>)!).Values.ToList()).ToList();
     }
 
     public async Task<DataAggregatedDto> GetDataSummary(IEnumerable<QueryFilterDto>? filters)
@@ -72,7 +73,7 @@ public class BooksRepository : IRepository
         
         //Here it's assumed that all data is verified.
         //It depends on a data provider if data is verified, or not, or partially verified.
-        return new DataAggregatedDto(DateTime.Parse((string)result[minDateKey]),
+        return new DataAggregatedDto(DateTime.Parse((string)result![minDateKey]),
                                      DateTime.Parse((string)result[maxDateKey]),
                                      (int)result[countKey],
                                      (int)result[countKey],

@@ -18,7 +18,7 @@
     <PackageReference Include="SqlKata.Execution" Version="2.4.0" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.116" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.18.0" />
-    <PackageReference Include="Veracity.DataWorkbench.Connector.Provider.Abstractions" Version="1.0.24" />
+    <PackageReference Include="Veracity.DataWorkbench.Connector.Provider.Abstractions" Version="1.0.29" />
   </ItemGroup>
 
 </Project>

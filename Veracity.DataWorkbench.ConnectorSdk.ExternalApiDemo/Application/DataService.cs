@@ -1,12 +1,12 @@
 ﻿using System.Net;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Utils;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataDiscovery.Request;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataDiscovery.Response;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataQuery.Request;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataQuery.Response;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Utils;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
 /// <summary>
 /// This class encapsulates handling of data queries. It validates a query (together with access authorization) and delivers the query to a specific data source handler.
@@ -32,13 +32,16 @@ public class DataService
     public async Task<DataQueryResultDto> QueryData(DataQueryDto queryDto)
     {
         var repository = ValidateAndGetRepository(queryDto.Settings!);
-
+        
         var columns = repository.GetColumns(queryDto.Columns);
         var rows = await repository.GetData(queryDto.Columns, queryDto.Filters);
 
+        //map dynamic to string
+        var rowsMapped = rows.Select(row => row.Select(rowItem => rowItem as string).ToList()).ToList();
+
         //All data is wrapped into a DTO and returned.
         //Here a pagination is very simplistic and only for demo purposes. In real application you would want to handle pagination on DB queries level.
-        return new DataQueryResultDto(new DataDto(columns, rows), new Provider.Abstractions.Contracts.PaginationDto(1, rows.Count, 1, rows.Count));
+        return new DataQueryResultDto(new DataDto(columns, rowsMapped), new Connector.Provider.Abstractions.Contracts.PaginationDto(1, rows.Count, 1, rows.Count));
     }
 
     /// <summary>
@@ -62,7 +65,7 @@ public class DataService
     /// <param name="settings"></param>
     /// <returns></returns>
     /// <exception cref="QueryException"></exception>
-    private IRepository ValidateAndGetRepository(SettingsDto settings)
+    private IRepository ValidateAndGetRepository(IReadOnlyDictionary<string, string> settings)
     {
         var connectionValidationStatus = _queryValidator.ValidateConnection(settings);
         if (!connectionValidationStatus.IsValid)

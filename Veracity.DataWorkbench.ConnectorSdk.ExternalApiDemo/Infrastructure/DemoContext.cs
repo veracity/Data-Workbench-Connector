@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Domain;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Domain;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
 
 /// <summary>
 /// Defines a relational DB with provider's data 

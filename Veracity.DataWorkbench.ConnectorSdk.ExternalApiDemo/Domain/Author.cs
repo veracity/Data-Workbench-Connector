@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Domain;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Domain;
 
 /// <summary>
 /// In this simple 'Library' demo, this class represents an 'Author' type of data

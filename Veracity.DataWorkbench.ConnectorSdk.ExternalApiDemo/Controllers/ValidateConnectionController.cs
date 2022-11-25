@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.API;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.ConnectionValidation.Response;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Controllers;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Controllers;
 
 /// <summary>
 /// Vaildates a connection. This endpoint is called once when a new connection is established (or when it's updated/patched)
@@ -24,10 +24,11 @@ public class ValidateConnectionController : ControllerBase, IConnectionValidatio
     /// Returns if provided connection settings are valid and authorized. If not, returns a list of failures.
     /// </summary>
     /// <param name="settings"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
     [HttpPost]
-    public Task<ConnectionValidationResultDto> ValidateConnection(SettingsDto settings)
+    public Task<ConnectionValidationResultDto> ValidateConnection(SettingsDto settings, CancellationToken cancellationToken)
     {
-        return Task.FromResult(_queryValidator.ValidateConnection(settings));
+        return Task.FromResult(_queryValidator.ValidateConnection(settings.Settings));
     }
 }

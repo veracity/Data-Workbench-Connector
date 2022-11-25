@@ -1,13 +1,11 @@
-﻿using System.Diagnostics.Metrics;
-using System.Linq;
-using SqlKata;
+﻿using SqlKata;
 using SqlKata.Execution;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Domain;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts;
 using Veracity.DataWorkbench.Connector.Provider.Abstractions.Contracts.DataDiscovery.Response;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Domain;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
 
-namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
+namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
 /// <summary>
 /// This class represents an Authors table as a data source. It has a few columns: FirstName, LastName and Books (by ref). 
@@ -44,7 +42,7 @@ public class AuthorsRepository : IRepository
         query = AttachFilters(query, filters);        
 
         var rawResult = await _queryFactory.GetAsync(query);
-        return rawResult.Select(row => (row as IDictionary<string, dynamic>).Values.ToList()).ToList();
+        return rawResult.Select(row => (row as IDictionary<string, dynamic>)?.Values.ToList()).ToList()!;
     }
 
     public async Task<DataAggregatedDto> GetDataSummary(IEnumerable<QueryFilterDto>? filters)
@@ -68,7 +66,7 @@ public class AuthorsRepository : IRepository
         //Here it's assumed that all data is verified.
         //A data provider decides itself if provided data is verified, or not, or partially verified.
         //This may depend on their own data quality check.
-        return new DataAggregatedDto(DateTime.Parse((string)result[earliestPublishedKey]),
+        return new DataAggregatedDto(DateTime.Parse((string)result![earliestPublishedKey]),
                                      DateTime.Parse((string)result[latestPublishedKey]),
                                      authorsCount,
                                      (int)result[booksCountKey],
@@ -96,7 +94,7 @@ public class AuthorsRepository : IRepository
 
         var rawResult = await _queryFactory.GetAsync(query);
         var lastNameFilterOptionValues = rawResult.Select(row => row as IDictionary<string, dynamic>)
-                                .Select(rowDict => new FilterOptionValueDto((string)rowDict["Key"],
+                                .Select(rowDict => new FilterOptionValueDto((string)rowDict!["Key"],
                                                                             (string)rowDict["Value"],
                                                                             DateTime.Parse((string)rowDict["DataFrom"]),
                                                                             DateTime.Parse((string)rowDict["DataTo"]),

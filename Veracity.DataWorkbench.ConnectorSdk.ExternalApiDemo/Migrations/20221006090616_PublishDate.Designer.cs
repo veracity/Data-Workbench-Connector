@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Veracity.DataWorkbench.Connector.ExternalApiDemo.Infrastructure;
+using Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Infrastructure;
 
 #nullable disable
 

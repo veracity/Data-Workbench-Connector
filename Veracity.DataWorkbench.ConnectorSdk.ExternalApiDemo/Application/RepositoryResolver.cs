@@ -1,4 +1,4 @@
-﻿namespace Veracity.DataWorkbench.Connector.ExternalApiDemo.Application;
+﻿namespace Veracity.DataWorkbench.ConnectorSdk.ExternalApiDemo.Application;
 
 /// <summary>
 /// We assume that a data provider can have multiple internal data sources. Depending on a query, 
